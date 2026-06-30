@@ -864,13 +864,6 @@ footer
         width: 82%;
         padding: 0;
         gap: 0;
-        justify-content: space-between !important;
-    }
-    .nav-links {
-        display: none; /* Elrejtjük a sima linkeket */
-    }
-    .hamburger {
-        display: flex; /* Megjelenítjük a hamburgert */
     }
 
     nav a {padding-right: 10px;font-size: 16px;}
@@ -879,6 +872,18 @@ footer
 
     .space {height: 50px;}
     
+}
+
+@media (max-width: 767px) {
+
+    nav{justify-content: space-between !important;}
+
+    .nav-links {
+        display: none; /* Elrejtjük a sima linkeket */
+    }
+    .hamburger {
+        display: flex; /* Megjelenítjük a hamburgert */
+    }
 }
 
 @media(min-width: 550px)
