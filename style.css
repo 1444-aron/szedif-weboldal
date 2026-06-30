@@ -1,0 +1,807 @@
+ @import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+ 
+ 
+:root 
+{
+    --bg-color: #030b1e;
+    --secondary-color: #082049;
+    --dark-secondary-color: #051635;
+    --black: #000;
+    --white: #fff;
+
+    --yellow:  #eec92d;
+    --dark-yellow: #a68c1c;
+    --green: #8edc6c;
+    --dark-green: #54853f;
+    --red: #ef4444;
+    --dark-red: #b63333;
+    --blue: #1f48ff;
+    --dark-blue: #122eab;
+    --cian: #53d7db;
+    --dark-cian: #23adb2;
+    --turkiz: #0583ab;
+    --dark-turkiz: #09617d;
+    --orange: #ff8a30;
+    --dark-orange: #b26230;
+    --purple: #8c52ff;
+    --dark-purple: #632ecd;
+
+
+    --container-width: 1100px;
+
+    --border-radius: 25px;
+}
+
+
+.wp-site-blocks {
+    padding-top: 0 !important;
+}
+
+body {
+    padding: 0; 
+    margin: 0; 
+    background-color: var(--bg-color);
+    font-family: "Geom", sans-serif !important;
+    overflow-x: hidden; /* Megakadályozza az oldalirányú scrollt mobilon */
+}
+
+
+/* NAV */
+
+    nav {
+        z-index: 1000;
+        position: relative;
+        width: 90%; /* Mobilon picit szélesebb, hogy jobban elférjen */
+        max-width: var(--container-width);
+        border-radius: var(--border-radius);
+        margin: auto;
+        
+        transform: rotate(-.5deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Ha nem fér el, törjön több sorba */
+        padding: 10px;
+        gap: 15px;
+    }
+
+    nav::before {
+        content: '';
+        position: absolute;
+        left: 5px; right: 5px; top: 5px; bottom: 5px;
+        z-index: -2;
+        border-radius: 20px;
+    }
+
+    nav a {
+        color: var(--black);
+        text-decoration: none;
+        padding: 5px 10px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    #imga{padding: 0;}
+
+    nav img {margin: 0 10px;}
+
+    .defNav{background: linear-gradient(to right, var(--black), var(--dark-yellow));}
+    .defNav::before{background-color: var(--yellow);}
+    .defNav a{color: var(--black);}
+
+    .dark-cian-nav{background: linear-gradient(to right, var(--black), var(--dark-turkiz));}
+    .dark-cian-nav::before{background-color: var(--turkiz);}
+    .dark-cian-nav a{color: var(--white);}
+
+    .orange-nav{background: linear-gradient(to right, var(--black), var(--dark-orange));}
+    .orange-nav::before{background-color: var(--orange);}
+    .orange-nav a{color: var(--white);}
+/* NAV END */
+
+
+/* HEADER */
+
+    header {
+        margin: 0;
+        background: linear-gradient(120deg, var(--secondary-color), var(--bg-color));
+        position: relative;
+        padding-top: 30px;
+    }
+
+    .no-bg-header{background: var(--bg-color) !important;}
+
+
+    /* Responzív Főcím */
+
+    .title
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .title h3
+    {
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .title-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        z-index: 1;
+        margin: 0; 
+        color: #fff; 
+        font-size: clamp(2rem, 8vw, 20rem); /* Dinamikus méretezés határokkal */
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    header h1 span.space-block {
+        display: inline-block;
+        width: 20px;
+    }
+
+    header .contact {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Mobilon egymás alá/több sorba mennek */
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .contact #fb, .contact #ig {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 120px; /* Fix szélesség helyett rugalmasabb alapméret */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 25px;
+        z-index: 1;
+        font-size: 14px;
+    }
+
+    #ig { background-color: #F00075; }
+    #fb { background-color: #0866FF; }
+
+    #fb svg, #ig svg {
+        fill: #fff;
+        padding-right: 8px;
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    .grid {
+        top: 0;
+        opacity: .1;
+        z-index: 0;
+        width: 100%; height: 100%;
+        position: absolute;
+        background-image: linear-gradient(#b4b4b4 0.6px, transparent 0.6px), linear-gradient(90deg, #b4b4b4 0.6px, transparent 0.6px), linear-gradient(#b4b4b4 0.3px, transparent 0.3px), linear-gradient(90deg, #b4b4b4 0.3px, #08204900 0.3px);
+        background-size: 30px 30px, 30px 30px, 6px 6px, 6px 6px;
+    }
+
+    .blur {
+        position: absolute;
+        width: 300px; height: 300px;
+        
+        border-radius: 50%;
+        top: -100px; left: -100px;
+        filter: blur(50px);
+        z-index: 0;
+    }
+
+    .def-blur{background-color: #447dd9;}
+    .orange-blur{background-color: var(--orange);}
+    .turkiz-blur{background-color: var(--turkiz);}
+
+/* HEADER END */
+
+/* QUICKNAV */
+
+    .quickNav, .ourGroup {
+        background-color: var(--bg-color);
+        background-image: url(https://szedif.hu/wp-content/uploads/2026/06/kell-a-dizanj-loptam-1920-x-1080-keppont-masolata-1.png);
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        margin: 0;
+        position: relative;
+        box-shadow: 0 0 20px 3px  #030b1ebb;
+        z-index: 10;
+    }
+
+    .quickNav{display: flex; justify-content: center; align-items: center;}
+    .turkiz-quickNav{background-image: url(https://szedif.hu/wp-content/uploads/2026/06/kell-a-dizanj-loptam-1920-x-1080-keppont-masolata-2.png); flex-direction: column;}
+
+    .container 
+    {
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    .cards 
+    {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr; /* Alapból (mobilon) 1 oszlop */
+        gap: 2rem;
+    }
+
+    .card 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        cursor: default;
+    }
+
+    .index-card{justify-content: center; cursor: pointer;}
+
+    .aboutus-card{background-color: #030b1e;}
+
+    /* INDEX.HTML - FŐOLDAL */
+
+        .blurOrange, .blurBlue, .blurDef 
+        {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            filter: blur(40px);
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .blurOrange { background-color: #ff8a30; }
+        .blurBlue { background-color: #2c82a5; }
+        .blurDef { background-color: #eec92d; }
+
+        .bubble 
+        {
+            padding: 12px 20px;
+            border-radius: 25px;
+            width: 80%;
+            max-width: 220px;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 20px;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .bubble.szedinfo 
+        {
+            background: linear-gradient(to right, #000, #b26230);
+        }
+
+        .szedinfo::before 
+        {
+            content: '';
+            position: absolute;
+            background-color: #ff8a30;
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .bubble.ko7 
+        {
+            background: linear-gradient(to right, #000, #a68c1c);
+            color: #000;
+        }
+
+        .ko7::before 
+        {
+            content: '';
+            position: absolute;
+            background-color: #eec92d;
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .bubble.szvd 
+        {
+            background: linear-gradient(to right, #000, #09617d);
+        }
+
+        .szvd::before 
+        {
+            content: '';
+            position: absolute;
+            background-color: #09617d;
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .bubble:hover 
+        {
+            transform: scale(1.1) rotate(-2deg);
+        }
+    
+    /* INDEX END */
+
+    /* RÓLUNK */
+        .aboutus
+        {
+            margin: 0 auto;
+            color: #000;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #000, #a68c1c);
+            width: fit-content;
+            padding: 12px 25px;
+            border-radius: 20px;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 10;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+            width: 80%;
+            text-align: justify;
+        }
+
+        
+
+        .aboutus::before {
+            content: '';
+            position: absolute;
+            background-color: #eec92d;
+            left: 10px; right: 10px; top: 10px; bottom: 10px;
+            z-index: -2;
+            border-radius: 10px;
+        }
+
+        .aboutus-card p {color: #fff; text-align: justify}
+
+        .aboutus-card h1 
+        {
+            margin: 0 auto;
+            color: #000;
+            text-transform: uppercase;
+            width: fit-content;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transform: rotate(-3deg);
+            position: relative;
+            z-index: 10;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+        }
+
+
+        .aboutus-card h1::before 
+        {
+            content: '';
+            position: absolute;
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -2;
+            border-radius: 25px;
+        }
+    /* END RÓLUNK */
+
+    /* SZVD */
+
+        .turkiz-quickNav-h1 
+        {
+            margin: 0 auto;
+            color: #fff;
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--black), var(--dark-turkiz));
+            width: fit-content;
+            padding: 12px 25px;
+            border-radius: 15px;
+            transform: rotate(-3deg);
+            position: relative;
+            z-index: 10;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .turkiz-quickNav-h1::before {
+            content: '';
+            position: absolute;
+            background-color: var(--turkiz);
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -2;
+            border-radius: 10px;
+        }
+
+
+    /* END SZVD */
+
+    
+
+/* QUICKNAV END */
+
+/* JOIN */
+
+    .join 
+    {
+        background: linear-gradient(120deg, var(--secondary-color), var(--bg-color));
+        position: relative;
+        padding: 60px 0;
+    }
+
+    .join iframe 
+    {
+        position: relative;
+        z-index: 10;
+        display: block;
+        max-width: 740px;
+        margin: 30px auto 0 auto;
+        width: 95%;
+    }
+
+    #joinH1
+    {
+        margin: 0 auto;
+        color: #000;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #000, var(--dark-yellow));
+        width: fit-content;
+        padding: 12px 25px;
+        border-radius: 15px;
+        transform: rotate(-3deg);
+        position: relative;
+        z-index: 10;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        text-align: center;
+    }
+
+    #joinH1::before
+    {
+        content: '';
+        position: absolute;
+        background-color: var(--yellow);
+        left: 5px; right: 5px; top: 5px; bottom: 5px;
+        z-index: -2;
+        border-radius: 10px;
+    }
+
+    /* RÓLUNK */
+
+        .clickable {cursor: pointer;}
+
+        .def h1{background: linear-gradient(to right, var(--black), var(--dark-yellow));}
+        .def h1::before{background-color: var(--yellow);}
+
+        .green h1{background: linear-gradient(to right, var(--black), var(--dark-green));}
+        .green h1::before{background-color: var(--green);}
+
+        .red h1{background: linear-gradient(to right, var(--black), var(--dark-red));color: #fff;}
+        .red h1::before{background-color: var(--red); }
+
+        .blue h1{background: linear-gradient(to right, var(--black), var(--dark-blue));color: #fff;}
+        .blue h1::before{background-color: var(--blue)}
+
+        .cian h1{background: linear-gradient(to right, var(--black), var(--dark-cian));color: #fff;}
+        .cian h1::before{background-color: var(--cian);}
+
+        .darkcian h1{background: linear-gradient(to right, var(--black), var(--dark-turkiz));color: #fff;}
+        .darkcian h1::before{background-color: var(--turkiz);}
+
+        .orange h1{background: linear-gradient(to right, var(--black), var(--dark-orange));color: #fff;}
+        .orange h1::before{background-color: var(--orange)}
+
+        .purple h1{background: linear-gradient(to right, var(--black), var(--dark-purple));color: #fff;}
+        .purple h1::before{background-color: var(--purple);}
+
+
+        .card img{width: 100%; height: auto;border-radius: 15px;}
+
+        .member{background: #082049;padding: 0;}
+
+        .member .parag{padding: 20px;}
+        .member .parag p{color: #fff;}
+
+        .my-20{margin-top: 20px; margin-bottom: 20px;}
+
+        #mail, #mail a{color: #eec92d;text-decoration: none;padding: 0; margin: 0;}
+
+    /* END RÓLUNK */
+
+    /* PARTNEREINK */
+        .partner-cards .card{background-color: var(--bg-color);}
+
+        .partner-cards .card img
+        {
+            width: 100%; height: auto;
+            border-radius: 15px;
+        }
+
+        .partner-cards .card h1 {
+            margin: 0 auto;
+            color: #000;
+            text-transform: uppercase;
+            
+            width: fit-content;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transform: rotate(-3deg);
+            position: relative;
+            z-index: 10;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+        }
+
+
+        .partner-cards .card h1::before {
+            content: '';
+            position: absolute;
+            
+            left: 5px; right: 5px; top: 5px; bottom: 5px;
+            z-index: -2;
+            border-radius: 25px;
+        }
+
+    /* END PARTNEREINK*/
+
+/* JOIN END */
+
+/* OURGROUP */
+    .ourGroup
+    {
+        background: #030b1e;
+    }
+
+    .ourGroup .desc
+    {
+        background-color: #082049;
+        color: #fff;
+        padding: 10px;
+        max-width: 1100px;
+        margin: auto;
+        border-radius: 25px;
+    }
+
+    .ourGroup h1 
+    {
+        margin: 0 auto;
+        color: #000;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #000, var(--dark-yellow));
+        width: fit-content;
+        padding: 12px 25px;
+        border-radius: 15px;
+        transform: rotate(-3deg);
+        position: relative;
+        z-index: 10;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        text-align: center;
+    }
+
+    .ourGroup h1::before 
+    {
+        content: '';
+        position: absolute;
+        background-color: var(--yellow);
+        left: 5px; right: 5px; top: 5px; bottom: 5px;
+        z-index: -2;
+        border-radius: 10px;
+    }
+
+/* END OURGROUP*/
+
+.space {
+    width: 20px; height: 30px;
+}
+
+footer
+{
+    
+    background-image: url(https://szedif.hu/wp-content/uploads/2026/06/kell-a-dizanj-loptam-1920-x-1080-keppont-masolata-1.png);
+    background-size: cover;
+    background-position: bottom;
+    margin: 0;
+    position: relative;
+    padding: 60px 0;
+    box-shadow: 0 0 20px 3px  #030b1ebb;
+}
+
+.def-footer
+{
+    background: var(--bg-color);
+}
+
+
+.footer-box
+{
+    margin: 0 auto;
+    color: #000;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #000, #a68c1c);
+    width: fit-content;
+    padding: 12px 25px;
+    border-radius: 20px;
+    transform: rotate(-1deg);
+    position: relative;
+    z-index: 10;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    width: 80%;
+    text-align: justify;
+}
+
+
+
+.footer-box::before {
+    content: '';
+    position: absolute;
+    background-color: #eec92d;
+    left: 10px; right: 10px; top: 10px; bottom: 10px;
+    z-index: -2;
+    border-radius: 10px;
+}
+
+.white-footer
+{
+    margin: 0 auto;
+    color: var(--white);
+    text-transform: uppercase;
+    background: linear-gradient(to right, var(--black), var(--dark-secondary-color));
+    width: fit-content;
+    padding: 12px 25px;
+    border-radius: 20px;
+    transform: rotate(-1deg);
+    position: relative;
+    z-index: 10;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    width: 80%;
+    text-align: justify;
+}
+
+
+
+.white-footer::before {
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    left: 10px; right: 10px; top: 10px; bottom: 10px;
+    z-index: -2;
+    border-radius: 10px;
+}
+
+.white-footer a{color: var(--white);}
+
+.turkiz-footer{background-image: url(https://szedif.hu/wp-content/uploads/2026/06/kell-a-dizanj-loptam-1920-x-1080-keppont-masolata-2.png);}
+.turkiz-box-footer{background: linear-gradient(to right, var(--black), var(--dark-turkiz)); color: #fff;}
+.turkiz-box-footer a{color: #fff;}
+.turkiz-box-footer::before{background-color: var(--turkiz); }
+
+.team-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid #fff; /* Kezdő neonkékes szegély */
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Amikor rásuhansz az egérrel (Hover effekt) */
+.team-btn:hover {
+    background: #fff;
+    color: #030b1e; /* Sötét háttérszín lesz a betű, hogy olvasható legyen */
+    box-shadow: 0 0 25px rgba(241, 241, 241, 0.6);
+    transform: translateY(-3px); /* Kicsit megemelkedik */
+}
+
+.white-btn
+{
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.white-btn:hover
+{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* A nyíl animációja hoverre */
+.team-btn:hover svg {
+    transform: translateX(5px);
+}
+
+/* Kattintáskor (Active) */
+.team-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.fEmail
+{
+    width: 100%;
+    margin: auto;
+}
+
+
+
+
+
+/* Tabletek és nagyobb kijelzők */
+@media(min-width: 1100px) {
+    .index-quickNav-cards {grid-template-columns: repeat(3, 1fr);}
+
+    .aboutus-join-cards{grid-template-columns: repeat(2, 1fr);}
+
+    .mCards{grid-template-columns: repeat(3, 1fr) !important;}
+
+    .partner-cards {grid-template-columns: repeat(2, 1fr);}
+
+    .fEmail
+    {
+        width: 90% !important;
+        margin: auto;
+    }
+}
+
+@media(min-width: 768px) {
+    nav {
+        width: 82%;
+        justify-content: flex-start;
+        padding: 0;
+        gap: 0;
+    }
+
+    nav a {padding-right: 10px;font-size: 16px;}
+
+    header {padding-top: 50px;}
+
+    .space {height: 50px;}
+    
+}
+
+@media(min-width: 550px)
+{
+    .mCards{grid-template-columns: repeat(2, 1fr);}
+
+    .fEmail
+    {
+        width: 100%;
+        margin: auto;
+    }
+}
