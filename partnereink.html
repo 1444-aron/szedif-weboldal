@@ -6,7 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://1444-aron.github.io/szedif-weboldal/style.css">
+    <script src="https://1444-aron.github.io/szedif-weboldal/script.js" defer></script>
     <title>Főoldal</title>
 </head>
 <body>
@@ -15,11 +16,26 @@
         <div class="grid"></div>
         <nav class="defNav">
             <a id="imga" href="https://szedif.hu"><img src="https://szedif.hu/wp-content/uploads/2025/03/szedif_logo_500x500-150x150.png" width="50px" alt="Szedif Logo">
-            <a href="https://szedif.hu/about-us">About us</a>
-            <a href="https://szedif.hu/rolunk">Rólunk</a>
-            <a href="https://szedif.hu/partnereink">Partnereink</a>
-            <a href="https://szedif.hu/esemenyek">Események</a>
+            <a class="nav-links" href="https://szedif.hu/about-us">About us</a>
+            <a class="nav-links" href="https://szedif.hu/rolunk">Rólunk</a>
+            <a class="nav-links" href="https://szedif.hu/partnereink">Partnereink</a>
+            <a class="nav-links" href="https://szedif.hu/esemenyek">Események</a>
+
+            <button class="hamburger" aria-label="Menü megnyitása" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
         </nav>
+
+        <div class="sidenav def-sidenav" id="mobileMenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+            
+            <a href="https://szedif.hu/about-us" onclick="toggleMenu()">About us</a>
+            <a href="https://szedif.hu/rolunk" onclick="toggleMenu()">Rólunk</a>
+            <a href="https://szedif.hu/partnereink" onclick="toggleMenu()">Partnereink</a>
+            <a href="https://szedif.hu/esemenyek" onclick="toggleMenu()">Események</a>
+        </div>
         
         <div class="title-container">
             <h1><strong>PARTNEREINK</strong></h1>

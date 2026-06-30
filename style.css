@@ -170,6 +170,12 @@ body {
 
     .def-sidenav{border-left: 2px solid var(--yellow);}
     .def-sidenav a{color: var(--yellow);}
+
+    .orange-sidenav{border-left: 2px solid var(--orange);}
+    .orange-sidenav a{color: var(--orange);}
+
+    .turkiz-sidenav{border-left: 2px solid var(--turkiz);}
+    .turkiz-sidenav a{color: var(--turkiz);}
 /* NAV END */
 
 
