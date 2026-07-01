@@ -32,6 +32,10 @@
     --border-radius: 25px;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 
 .wp-site-blocks {
     padding-top: 0 !important;
@@ -852,9 +856,7 @@ footer
 }
 
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+
 
 
 
