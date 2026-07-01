@@ -439,16 +439,19 @@ body {
             color: #000;
             text-transform: uppercase;
             background: linear-gradient(to right, #000, #a68c1c);
-            width: fit-content;
             padding: 12px 25px;
             border-radius: 20px;
             transform: rotate(-1deg);
             position: relative;
             z-index: 10;
             font-size: clamp(1.5rem, 4vw, 2rem);
-            text-align: center;
-            width: 80%;
             text-align: justify;
+
+
+
+            box-sizing: border-box; /* Biztosítja, hogy a padding benne legyen a szélességben */
+            width: 90%;            /* Mobilon adjunk neki kicsit több helyet, hogy kényelmesebb legyen */
+            max-width: var(--container-width); /* Ne legyen nagyobb, mint a max szélesség */
         }
 
         
@@ -839,6 +842,10 @@ footer
     margin: auto;
 }
 
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 
 
