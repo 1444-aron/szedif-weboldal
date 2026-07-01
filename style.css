@@ -467,24 +467,33 @@ body {
 
         .aboutus-card p {color: #fff; text-align: justify}
 
-        .aboutus-card h1 
-        {
+        /* RÓLUNK & PARTNEREINK CÍMSOROK JAVÍTÁSA */
+        .aboutus-card h1, 
+        .partner-cards .card h1,
+        .def h1, .green h1, .red h1, .blue h1, .cian h1, .darkcian h1, .orange h1, .purple h1 {
             margin: 0 auto;
             color: #000;
             text-transform: uppercase;
-            width: fit-content;
-            padding: 12px 25px;
+            
+            /* JAVÍTÁS: */
+            width: 90%; /* fit-content helyett engedjük, hogy elfoglalja a helyet és letörjön sorokba */
+            max-width: 100%;
+            box-sizing: border-box;
+            
+            padding: 12px 15px; /* Mobilon picit kisebb oldalsó padding */
             border-radius: 30px;
             transform: rotate(-3deg);
             position: relative;
             z-index: 10;
-            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(1.2rem, 4vw, 1.8rem); /* Minimálisan csökkentve a mobil alapméretet */
             text-align: center;
+            word-wrap: break-word; /* Ha nagyon hosszú a szó, törje el */
         }
 
-
-        .aboutus-card h1::before 
-        {
+        /* Biztosítjuk, hogy a h1 mögötti álgondola (::before) is kövesse a dobozt */
+        .aboutus-card h1::before, 
+        .partner-cards .card h1::before,
+        .def h1::before, .green h1::before, .red h1::before, .blue h1::before, .cian h1::before, .darkcian h1::before, .orange h1::before, .purple h1::before {
             content: '';
             position: absolute;
             left: 5px; right: 5px; top: 5px; bottom: 5px;
