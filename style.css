@@ -779,6 +779,7 @@ footer
 .turkiz-footer{background-image: url(https://szedif.hu/wp-content/uploads/2026/06/kell-a-dizanj-loptam-1920-x-1080-keppont-masolata-2.png);}
 .turkiz-box-footer{background: linear-gradient(to right, var(--black), var(--dark-turkiz)); color: #fff;}
 .turkiz-box-footer a{color: #fff;}
+.turkiz-box-footer .team-btn{border: 2px solid #fff;}
 .turkiz-box-footer::before{background-color: var(--turkiz); }
 
 .team-btn {
